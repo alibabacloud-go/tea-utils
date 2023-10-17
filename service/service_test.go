@@ -8,6 +8,8 @@ import (
 
 	"github.com/alibabacloud-go/tea/tea"
 	"github.com/alibabacloud-go/tea/utils"
+	opentracing "github.com/opentracing/opentracing-go"
+	"github.com/opentracing/opentracing-go/ext"
 )
 
 func Test_SetFunc(t *testing.T) {
@@ -139,6 +141,15 @@ func Test_ValidateModel(t *testing.T) {
 	utils.AssertNil(t, err)
 
 	err = ValidateModel(nil)
+	utils.AssertNil(t, err)
+
+	tracer := opentracing.GlobalTracer()
+	span := tracer.StartSpan(
+		"aliyuncs.com/test",
+		opentracing.Tag{Key: string(ext.Component), Value: "aliyunApi"},
+		opentracing.Tag{Key: "request", Value: "test"})
+	runtime := new(RuntimeOptions).SetSpan(&span)
+	err = ValidateModel(runtime)
 	utils.AssertNil(t, err)
 }
 
