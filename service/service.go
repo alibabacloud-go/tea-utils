@@ -52,6 +52,7 @@ type RuntimeOptions struct {
 	BackoffPeriod     *int               `json:"backoffPeriod" xml:"backoffPeriod"`
 	ReadTimeout       *int               `json:"readTimeout" xml:"readTimeout"`
 	ConnectTimeout    *int               `json:"connectTimeout" xml:"connectTimeout"`
+	IdleConnTimeout   *int               `json:"idleConnTimeout" xml:"idleConnTimeout"`
 	LocalAddr         *string            `json:"localAddr" xml:"localAddr"`
 	HttpProxy         *string            `json:"httpProxy" xml:"httpProxy"`
 	HttpsProxy        *string            `json:"httpsProxy" xml:"httpsProxy"`
@@ -131,6 +132,11 @@ func (s *RuntimeOptions) SetReadTimeout(v int) *RuntimeOptions {
 
 func (s *RuntimeOptions) SetConnectTimeout(v int) *RuntimeOptions {
 	s.ConnectTimeout = &v
+	return s
+}
+
+func (s *RuntimeOptions) SetIdleConnTimeout(v int) *RuntimeOptions {
+	s.IdleConnTimeout = &v
 	return s
 }
 
