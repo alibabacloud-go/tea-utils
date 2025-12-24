@@ -1,29 +1,40 @@
 [English](README.md) | 简体中文
 
-![](https://aliyunsdk-pages.alicdn.com/icons/AlibabaCloud.svg)
+![阿里云](https://aliyunsdk-pages.alicdn.com/icons/AlibabaCloud.svg)
 
-## Alibaba Cloud Tea Util for Go
+# Alibaba Cloud Tea Util for Go
+
+[![Go](https://github.com/alibabacloud-go/tea-utils/actions/workflows/go.yml/badge.svg)](https://github.com/alibabacloud-go/tea-utils/actions/workflows/go.yml)
+[![Release](https://img.shields.io/github/release/alibabacloud-go/tea-utils.svg)](https://github.com/aliyun/aliyun-cli/releases/latest)
+[![Codecov](https://img.shields.io/codecov/c/github/alibabacloud-go/tea-utils)](https://codecov.io/gh/alibabacloud-go/tea-utils)
+[![GitHub](https://img.shields.io/github/license/alibabacloud-go/tea-utils)](https://github.com/alibabacloud-go/tea-utils/blob/master/LICENSE)
 
 ## 要求
+
 - 您需要确保本地安装的 go 环境版本大于 1.12.0.
 
 ## 安装
 
 你可以使用 `go mod` 来管理你的依赖，
+
 ```sh
-$ go get github.com/alibabacloud-go/tea-utils
+go get github.com/alibabacloud-go/tea-utils
 ```
 
 ## 问题
+
 [提交 Issue](https://github.com/aliyun/tea-util/issues/new)，不符合指南的问题可能会立即关闭。
 
 ## 发行说明
+
 每个版本的详细更改记录在[发行说明](./ChangeLog.txt)中。
 
 ## 相关
-* [最新源码](https://github.com/aliyun/tea-util/releases)
+
+- [最新源码](https://github.com/aliyun/tea-util/releases)
 
 ## 许可证
+
 [Apache-2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
 Copyright (c) 2009-present, Alibaba Cloud All rights reserved.
