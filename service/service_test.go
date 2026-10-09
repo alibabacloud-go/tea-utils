@@ -33,6 +33,7 @@ func Test_SetFunc(t *testing.T) {
 		SetSocks5NetWork("tcp").
 		SetSocks5Proxy("sock5proxy").
 		SetKeepAlive(false).
+		SetIpv4Only(true).
 		SetExtendsParameters(new(ExtendsParameters).SetHeaders(map[string]*string{
 			"key": tea.String("value")}).SetQueries(map[string]*string{
 			"key": tea.String("value"),
@@ -56,6 +57,7 @@ func Test_SetFunc(t *testing.T) {
 	utils.AssertEqual(t, "tcp", tea.StringValue(runtime.Socks5NetWork))
 	utils.AssertEqual(t, "sock5proxy", tea.StringValue(runtime.Socks5Proxy))
 	utils.AssertEqual(t, false, tea.BoolValue(runtime.KeepAlive))
+	utils.AssertEqual(t, true, tea.BoolValue(runtime.Ipv4Only))
 	utils.AssertEqual(t, "value", tea.StringValue(runtime.ExtendsParameters.Headers["key"]))
 	utils.AssertEqual(t, "value", tea.StringValue(runtime.ExtendsParameters.Queries["key"]))
 	runtime.GoString()

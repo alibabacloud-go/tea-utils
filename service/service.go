@@ -69,6 +69,7 @@ type RuntimeOptions struct {
 	Socks5Proxy       *string            `json:"socks5Proxy" xml:"socks5Proxy"`
 	Socks5NetWork     *string            `json:"socks5NetWork" xml:"socks5NetWork"`
 	KeepAlive         *bool              `json:"keepAlive" xml:"keepAlive"`
+	Ipv4Only          *bool              `json:"ipv4Only" xml:"ipv4Only"`
 	ExtendsParameters *ExtendsParameters `json:"extendsParameters,omitempty" xml:"extendsParameters,omitempty"`
 
 	// WebSocket Specific Configuration
@@ -228,6 +229,11 @@ func (s *RuntimeOptions) SetSocks5NetWork(v string) *RuntimeOptions {
 
 func (s *RuntimeOptions) SetKeepAlive(v bool) *RuntimeOptions {
 	s.KeepAlive = &v
+	return s
+}
+
+func (s *RuntimeOptions) SetIpv4Only(v bool) *RuntimeOptions {
+	s.Ipv4Only = &v
 	return s
 }
 
